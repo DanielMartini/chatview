@@ -22,6 +22,7 @@
 import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:chatview_utils/chatview_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:gpt_markdown/gpt_markdown.dart';
 
 import '../models/config_models/replied_message_configuration.dart';
 import '../utils/constants/constants.dart';
@@ -73,7 +74,7 @@ class ReplyMessageWidget extends StatelessWidget {
           crossAxisAlignment:
               replyBySender ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
-            Text(
+            GptMarkdown(
               "${PackageStrings.currentLocale.repliedBy} $replyBy",
               style: repliedMessageConfig?.replyTitleTextStyle ??
                   textTheme.bodyMedium!
@@ -144,7 +145,7 @@ class ReplyMessageWidget extends StatelessWidget {
                                         if (message.replyMessage
                                                 .voiceMessageDuration !=
                                             null)
-                                          Text(
+                                          GptMarkdown(
                                             message.replyMessage
                                                 .voiceMessageDuration!
                                                 .toHHMMSS(),
@@ -153,7 +154,7 @@ class ReplyMessageWidget extends StatelessWidget {
                                           ),
                                       ],
                                     )
-                                  : Text(
+                                  : GptMarkdown(
                                       replyMessage,
                                       style: repliedMessageConfig?.textStyle ??
                                           textTheme.bodyMedium!

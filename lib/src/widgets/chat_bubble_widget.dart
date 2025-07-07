@@ -21,6 +21,7 @@
  */
 import 'package:chatview_utils/chatview_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:gpt_markdown/gpt_markdown.dart';
 
 import '../extensions/extensions.dart';
 import '../models/config_models/feature_active_config.dart';
@@ -256,7 +257,7 @@ class _ChatBubbleWidgetState extends State<ChatBubbleWidget> {
             padding: chatListConfig
                     .chatBubbleConfig?.inComingChatBubbleConfig?.padding ??
                 const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-            child: Text(
+            child: GptMarkdown(
               messagedUser?.name ?? '',
               style: chatListConfig.chatBubbleConfig?.inComingChatBubbleConfig
                   ?.senderNameTextStyle,

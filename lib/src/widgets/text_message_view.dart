@@ -21,6 +21,7 @@
  */
 import 'package:chatview_utils/chatview_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:gpt_markdown/gpt_markdown.dart';
 
 import '../extensions/extensions.dart';
 import '../models/chat_bubble.dart';
@@ -95,7 +96,7 @@ class TextMessageView extends StatelessWidget {
                   linkPreviewConfig: _linkPreviewConfig,
                   url: textMessage,
                 )
-              : Text(
+              : GptMarkdown(
                   textMessage,
                   style: _textStyle ??
                       textTheme.bodyMedium!.copyWith(

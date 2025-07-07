@@ -1,5 +1,6 @@
 import 'package:chatview_utils/chatview_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:gpt_markdown/gpt_markdown.dart';
 
 import '../extensions/extensions.dart';
 import '../models/models.dart';
@@ -113,7 +114,7 @@ class ReplyMessageViewState extends State<ReplyMessageView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                          child: Text(
+                          child: GptMarkdown(
                             replyTitle,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
